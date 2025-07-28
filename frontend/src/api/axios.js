@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const instance = axios.create({
   baseURL: process.env.NODE_ENV === 'production' 
-    ? '/api'  // 生产环境使用相对路径
+    ? 'https://your-vercel-backend.vercel.app/api'  // 生产环境使用 Vercel 后端
     : 'http://localhost:5002/api',  // 开发环境使用本地端口
   timeout: 10000
 });
