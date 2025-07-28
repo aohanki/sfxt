@@ -19,7 +19,17 @@ const settingsRoutes = require('./routes/settings'); // 添加设置路由
 const usersRoutes = require('./routes/users'); // 添加用户管理路由
 
 const app = express();
-app.use(cors());
+
+// 生产环境配置
+if (process.env.NODE_ENV === 'production') {
+  app.use(cors({
+    origin: process.env.FRONTEND_URL || 'https://your-app.vercel.app',
+    credentials: true
+  }));
+} else {
+  app.use(cors());
+}
+
 app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);
