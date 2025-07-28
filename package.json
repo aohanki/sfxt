@@ -1,11 +1,14 @@
 {
-  "name": "fire-inventory-backend",
+  "name": "fire-inventory-system",
   "version": "1.0.0",
-  "description": "消防设施库存管理系统后端",
-  "main": "app.js",
+  "description": "消防设施库存管理系统",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -21,8 +24,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
-  },
-  "engines": {
-    "node": ">=16.0.0"
   }
-}
+} 
