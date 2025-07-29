@@ -23,7 +23,7 @@ const app = express();
 // 生产环境配置
 if (process.env.NODE_ENV === 'production') {
   app.use(cors({
-    origin: process.env.FRONTEND_URL || 'https://your-app.vercel.app',
+    origin: process.env.FRONTEND_URL || 'https://sfxt-fqmdse09g-aaaaas-projects-5c4b6a56.vercel.app',
     credentials: true
   }));
 } else {
