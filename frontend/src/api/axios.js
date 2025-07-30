@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 // 强制重新构建 - 2024-07-29 08:55
+// 强制重新构建 - 2024-07-29 09:20 - 修复Vercel部署问题
 const baseURL = process.env.NODE_ENV === 'production' 
   ? '/api'  // 生产环境使用相对路径
   : 'http://localhost:5002/api';  // 开发环境使用本地端口
