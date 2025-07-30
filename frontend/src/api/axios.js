@@ -1,9 +1,13 @@
 import axios from 'axios';
 
+const baseURL = process.env.NODE_ENV === 'production' 
+  ? '/api'  // 生产环境使用相对路径
+  : 'http://localhost:5002/api';  // 开发环境使用本地端口
+
+console.log('API Base URL:', baseURL, 'NODE_ENV:', process.env.NODE_ENV);
+
 const instance = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' 
-    ? '/api'  // 生产环境使用相对路径
-    : 'http://localhost:5002/api',  // 开发环境使用本地端口
+  baseURL,
   timeout: 10000
 });
 
