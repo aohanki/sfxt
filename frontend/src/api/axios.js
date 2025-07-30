@@ -18,7 +18,26 @@ instance.interceptors.request.use(config => {
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+  
+  // 调试：打印完整请求URL
+  console.log('Request URL:', config.baseURL + config.url);
+  console.log('Request Method:', config.method);
+  console.log('Request Headers:', config.headers);
+  
   return config;
 });
+
+// 响应拦截器：调试响应
+instance.interceptors.response.use(
+  response => {
+    console.log('Response:', response);
+    return response;
+  },
+  error => {
+    console.error('API Error:', error);
+    console.error('Error Config:', error.config);
+    return Promise.reject(error);
+  }
+);
 
 export default instance;
