@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// 强制重新构建 - 2024-07-29 08:55
 const baseURL = process.env.NODE_ENV === 'production' 
   ? '/api'  // 生产环境使用相对路径
   : 'http://localhost:5002/api';  // 开发环境使用本地端口
